@@ -110,7 +110,7 @@ export default function LandingPage() {
             Now in Pre-Alpha v0.1
           </div>
 
-          <p className="text-sm sm:text-base font-semibold tracking-[0.2em] text-gray-400 uppercase mb-3">
+          <p className="text-base sm:text-lg font-semibold tracking-[0.2em] text-violet-500 uppercase mb-3">
             Theory of Knowledge
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
