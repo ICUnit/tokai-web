@@ -53,36 +53,42 @@ const team = [
     role: "Founder & Lead Researcher",
     affiliation: "NTU CSIE",
     photo: "/team/austin.jpg",
+    link: "https://www.linkedin.com/in/austin-hua",
   },
   {
     name: "Prof. Shih-Wei Liao",
     role: "Supervisor",
     affiliation: "National Taiwan University",
     photo: "/team/liao.jpg",
+    link: "https://www.csie.ntu.edu.tw/~liao/",
   },
   {
     name: "Prof. Li-Wei Ko",
     role: "BCI Research Advisor",
     affiliation: "NYCU Brain Research Center",
     photo: "/team/ko.png",
+    link: "https://scholar.nycu.edu.tw/en/persons/li-wei-ko/",
   },
   {
     name: "Prof. Ming-Fong Sie",
     role: "Research Advisor",
     affiliation: "Chung Yuan Christian University",
     photo: "/team/sie.jpeg",
+    link: "https://www.linkedin.com/in/siemingfong/",
   },
   {
     name: "Hao-Yuan Chen",
     role: "AI & SaaS Advisor",
     affiliation: "Mindify AI · University of London",
     photo: "/team/mark.jpg",
+    link: "https://www.linkedin.com/in/mark-chen-next/",
   },
   {
     name: "Tony Siu",
     role: "AI Advisor",
     affiliation: "Temple University",
     photo: "/team/tony.jpeg",
+    link: "https://www.linkedin.com/in/pysolver/",
   },
 ];
 
@@ -321,11 +327,14 @@ export default function LandingPage() {
 
           <div className="grid sm:grid-cols-2 gap-5">
             {team.map((member) => (
-              <div
+              <a
                 key={member.name}
-                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex items-center gap-5"
+                href={member.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-violet-200 transition-all flex items-center gap-5 group"
               >
-                <div className="relative w-24 h-24 shrink-0 rounded-full overflow-hidden border-2 border-violet-100">
+                <div className="relative w-24 h-24 shrink-0 rounded-full overflow-hidden border-2 border-violet-100 group-hover:border-violet-300 transition-colors">
                   <Image
                     src={member.photo}
                     alt={member.name}
@@ -334,11 +343,11 @@ export default function LandingPage() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-lg">{member.name}</p>
+                  <p className="font-semibold text-gray-900 text-lg group-hover:text-violet-600 transition-colors">{member.name}</p>
                   <p className="text-sm text-violet-600 mb-0.5">{member.role}</p>
                   <p className="text-sm text-gray-400">{member.affiliation}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
