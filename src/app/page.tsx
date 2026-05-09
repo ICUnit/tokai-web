@@ -111,9 +111,8 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
-              Augmentable Intelligence
-            </span>
+            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">A</span>ugmentable{" "}
+            <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">I</span>ntelligence
           </h1>
 
           <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
