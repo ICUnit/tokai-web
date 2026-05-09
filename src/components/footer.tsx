@@ -17,7 +17,7 @@ export function Footer() {
               Theory of Knowledge, Augmentable Intelligence. BCI-powered
               neurosupport for ADHD and neurodivergent minds.
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-sm text-gray-400">
               Research project · National Taiwan University CSIE
             </p>
           </div>
@@ -49,10 +49,10 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between gap-2">
-          <p className="text-xs text-gray-400">
+          <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Tokai. All rights reserved.
           </p>
-          <p className="text-xs text-gray-400">
+          <p className="text-sm text-gray-400">
             Pre-Alpha · Not for clinical use
           </p>
         </div>
