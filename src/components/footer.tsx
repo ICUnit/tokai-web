@@ -1,5 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FaGithub, FaFacebook, FaInstagram, FaDiscord } from "react-icons/fa";
+
+const socials = [
+  { icon: FaGithub,    href: "https://github.com/TokaiApp",              label: "GitHub"    },
+  { icon: FaDiscord,   href: "https://discord.gg/kyNgMNHfYX",            label: "Discord"   },
+  { icon: FaInstagram, href: "https://instagram.com/tokai.app",           label: "Instagram" },
+  { icon: FaFacebook,  href: "https://facebook.com/tokaiapp",             label: "Facebook"  },
+];
 
 export function Footer() {
   return (
@@ -18,6 +26,22 @@ export function Footer() {
             <p className="text-sm text-gray-500">
               Research project · National Taiwan University CSIE
             </p>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-3 mt-1">
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-gray-400 hover:text-violet-600 transition-colors"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="flex gap-16">
