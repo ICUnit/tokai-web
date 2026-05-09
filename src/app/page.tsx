@@ -110,6 +110,9 @@ export default function LandingPage() {
             Now in Pre-Alpha v0.1
           </div>
 
+          <p className="text-sm sm:text-base font-semibold tracking-[0.2em] text-gray-400 uppercase mb-3">
+            Theory of Knowledge
+          </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
             <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">A</span>ugmentable{" "}
             <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">I</span>ntelligence

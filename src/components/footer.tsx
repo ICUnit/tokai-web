@@ -26,6 +26,12 @@ export function Footer() {
             <p className="text-sm text-gray-500">
               Research project · National Taiwan University CSIE
             </p>
+            <a
+              href="mailto:austin@tokai.app"
+              className="text-sm text-gray-500 hover:text-violet-600 transition-colors"
+            >
+              austin@tokai.app
+            </a>
 
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-1">
