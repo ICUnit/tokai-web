@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Activity, Bot, Brain, CheckCircle, ChevronRight, Cpu, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
@@ -51,31 +52,37 @@ const team = [
     name: "Seth Austin Harding",
     role: "Founder & Researcher",
     affiliation: "NTU CSIE · R11922203",
+    photo: "/team/austin.jpg",
   },
   {
     name: "Prof. Shih-Wei Liao",
     role: "Research Advisor",
     affiliation: "National Taiwan University",
-  },
-  {
-    name: "Hao-Yuan Chen",
-    role: "Hardware & Design",
-    affiliation: "Mindify AI · University of London",
-  },
-  {
-    name: "James Oyang",
-    role: "Operations",
-    affiliation: "California Institute of Technology",
-  },
-  {
-    name: "Tony Siu",
-    role: "EEG Model Research",
-    affiliation: "Temple University",
+    photo: "/team/liao.jpg",
   },
   {
     name: "Prof. Li-Wei Ko",
     role: "BCI Research Advisor",
     affiliation: "NYCU Brain Research Center",
+    photo: "/team/ko.png",
+  },
+  {
+    name: "Prof. Ming-Fong Sie",
+    role: "Research Advisor",
+    affiliation: "Chung Yuan Christian University",
+    photo: "/team/sie.jpg",
+  },
+  {
+    name: "Hao-Yuan Chen",
+    role: "Hardware & Design",
+    affiliation: "Mindify AI · University of London",
+    photo: "/team/mark.jpg",
+  },
+  {
+    name: "Tony Siu",
+    role: "EEG Model Research",
+    affiliation: "Temple University",
+    photo: "/team/tony.jpeg",
   },
 ];
 
@@ -316,19 +323,21 @@ export default function LandingPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4"
               >
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center mb-3 text-white font-bold text-sm">
-                  {member.name
-                    .split(" ")
-                    .filter((n) => n.length > 1 && n !== "Prof.")
-                    .map((n) => n[0])
-                    .slice(0, 2)
-                    .join("")}
+                <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden border-2 border-violet-100">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <p className="font-semibold text-gray-900">{member.name}</p>
-                <p className="text-sm text-violet-600 mb-0.5">{member.role}</p>
-                <p className="text-xs text-gray-400">{member.affiliation}</p>
+                <div>
+                  <p className="font-semibold text-gray-900">{member.name}</p>
+                  <p className="text-sm text-violet-600 mb-0.5">{member.role}</p>
+                  <p className="text-xs text-gray-400">{member.affiliation}</p>
+                </div>
               </div>
             ))}
           </div>
