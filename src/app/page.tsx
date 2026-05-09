@@ -70,7 +70,7 @@ const team = [
     name: "Prof. Ming-Fong Sie",
     role: "Research Advisor",
     affiliation: "Chung Yuan Christian University",
-    photo: "/team/sie.jpg",
+    photo: "/team/sie.jpeg",
   },
   {
     name: "Hao-Yuan Chen",
