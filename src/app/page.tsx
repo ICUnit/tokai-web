@@ -105,19 +105,18 @@ export default function LandingPage() {
         </div>
 
         <div className="relative max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-violet-50 border border-violet-200 rounded-full px-4 py-1.5 text-sm text-violet-700 mb-8 font-medium">
+          <div className="inline-flex items-center gap-2 bg-violet-50 border border-violet-200 rounded-full px-4 py-1.5 text-base text-violet-700 mb-8 font-medium">
             <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-            Now in pre-alpha · BCI + AI for ADHD
+            Now in Pre-Alpha v0.1
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-            Your mind,{" "}
             <span className="bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
-              augmented.
+              Augmentable Intelligence
             </span>
           </h1>
 
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
             Tokai fuses EEG brain-computer interface data with agentic AI to
             help neurodivergent minds focus, plan, and perform — continuously
             and empirically.
@@ -137,21 +136,21 @@ export default function LandingPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto text-base px-8 border-gray-200 text-gray-700 hover:border-gray-300"
+                className="w-full sm:w-auto text-base px-8 border-gray-300 text-gray-700 hover:border-gray-400"
               >
                 See how it works
               </Button>
             </Link>
           </div>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <div className="mt-12 flex flex-wrap justify-center gap-6 text-base text-gray-600">
             {[
               "NTU Master's research project",
               "Fine-tuned LUNA EEG foundation model",
               "Neuroethics & privacy-first",
             ].map((point) => (
               <span key={point} className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4 text-violet-400" />
+                <CheckCircle className="w-4 h-4 text-violet-500" />
                 {point}
               </span>
             ))}
@@ -166,7 +165,7 @@ export default function LandingPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Built for how your brain actually works
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Traditional productivity tools ignore your biology. Tokai reads it.
             </p>
           </div>
@@ -183,7 +182,7 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-gray-900 text-lg mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-base">
                   {feature.description}
                 </p>
               </div>
@@ -199,7 +198,7 @@ export default function LandingPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               How Tokai works
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Three steps from raw brainwaves to a smarter workday.
             </p>
           </div>
@@ -213,7 +212,7 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-gray-900 text-lg">
                   {step.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -227,7 +226,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-white border border-violet-200 rounded-full px-3 py-1 text-xs text-violet-700 mb-5 font-medium">
+              <div className="inline-flex items-center gap-2 bg-white border border-violet-200 rounded-full px-3 py-1 text-sm text-violet-700 mb-5 font-medium">
                 <Zap className="w-3 h-3" />
                 What you&apos;ll see
               </div>
@@ -237,7 +236,7 @@ export default function LandingPage() {
                   live.
                 </span>
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6 text-base">
                 Powered by a fine-tuned LUNA neural foundation model trained on
                 21,000+ hours of EEG data, Tokai delivers a continuous,
                 empirical Focus Index — not a self-report score, but a real
@@ -251,9 +250,9 @@ export default function LandingPage() {
                 ].map((point) => (
                   <li
                     key={point}
-                    className="flex items-start gap-2.5 text-sm text-gray-600"
+                    className="flex items-start gap-2.5 text-base text-gray-700"
                   >
-                    <CheckCircle className="w-4 h-4 text-violet-500 mt-0.5 shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-violet-500 mt-0.5 shrink-0" />
                     {point}
                   </li>
                 ))}
@@ -263,8 +262,8 @@ export default function LandingPage() {
             {/* Mock dashboard card */}
             <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6">
               <div className="flex items-center justify-between mb-5">
-                <p className="text-sm font-semibold text-gray-700">Focus Index</p>
-                <span className="text-xs bg-green-50 text-green-600 border border-green-200 rounded-full px-2.5 py-0.5 font-medium">
+                <p className="text-base font-semibold text-gray-700">Focus Index</p>
+                <span className="text-sm bg-green-50 text-green-600 border border-green-200 rounded-full px-2.5 py-0.5 font-medium">
                   Live
                 </span>
               </div>
@@ -272,12 +271,12 @@ export default function LandingPage() {
                 <span className="text-5xl font-bold bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
                   84
                 </span>
-                <span className="text-gray-400 text-sm mb-2">/ 100</span>
+                <span className="text-gray-500 text-base mb-2">/ 100</span>
               </div>
               <div className="w-full h-2 bg-gray-100 rounded-full mb-1">
                 <div className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 w-[84%]" />
               </div>
-              <p className="text-xs text-gray-400 mb-5">
+              <p className="text-sm text-gray-500 mb-5">
                 Optimal focus window · 38 min remaining
               </p>
 
@@ -291,8 +290,8 @@ export default function LandingPage() {
                     key={metric.label}
                     className="bg-gray-50 rounded-xl p-3 text-center"
                   >
-                    <p className="text-xs text-gray-400 mb-1">{metric.label}</p>
-                    <p className="font-semibold text-gray-900 text-sm">
+                    <p className="text-sm text-gray-500 mb-1">{metric.label}</p>
+                    <p className="font-semibold text-gray-900 text-base">
                       {metric.value}
                     </p>
                   </div>
@@ -300,10 +299,10 @@ export default function LandingPage() {
               </div>
 
               <div className="mt-4 bg-violet-50 border border-violet-100 rounded-xl p-3">
-                <p className="text-xs text-violet-800 font-semibold mb-0.5">
+                <p className="text-sm text-violet-800 font-semibold mb-0.5">
                   LUNA AI Insight
                 </p>
-                <p className="text-xs text-violet-700">
+                <p className="text-sm text-violet-700">
                   High focus detected. Recommend starting your most cognitively
                   demanding task now.
                 </p>
@@ -320,7 +319,7 @@ export default function LandingPage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Team
             </h2>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-xl mx-auto">
               Researchers and engineers from NTU, NYCU, Temple, and beyond.
             </p>
           </div>
@@ -344,8 +343,8 @@ export default function LandingPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 text-lg group-hover:text-violet-600 transition-colors">{member.name}</p>
-                  <p className="text-sm text-violet-600 mb-0.5">{member.role}</p>
-                  <p className="text-sm text-gray-400">{member.affiliation}</p>
+                  <p className="text-base text-violet-600 mb-0.5">{member.role}</p>
+                  <p className="text-base text-gray-500">{member.affiliation}</p>
                 </div>
               </a>
             ))}
@@ -360,7 +359,7 @@ export default function LandingPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to understand your brain?
           </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
             Join the pre-alpha. Be among the first to experience neurosupport
             that actually works with your biology.
           </p>
@@ -373,7 +372,7 @@ export default function LandingPage() {
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
           </Link>
-          <p className="text-xs text-gray-500 mt-4">
+          <p className="text-sm text-gray-400 mt-4">
             Free during pre-alpha · No credit card required
           </p>
         </div>
