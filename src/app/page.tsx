@@ -50,13 +50,13 @@ const steps = [
 const team = [
   {
     name: "Seth Austin Harding",
-    role: "Founder & Researcher",
-    affiliation: "NTU CSIE · R11922203",
+    role: "Founder & Lead Researcher",
+    affiliation: "NTU CSIE",
     photo: "/team/austin.jpg",
   },
   {
     name: "Prof. Shih-Wei Liao",
-    role: "Research Advisor",
+    role: "Supervisor",
     affiliation: "National Taiwan University",
     photo: "/team/liao.jpg",
   },
@@ -74,13 +74,13 @@ const team = [
   },
   {
     name: "Hao-Yuan Chen",
-    role: "Hardware & Design",
+    role: "AI & SaaS Advisor",
     affiliation: "Mindify AI · University of London",
     photo: "/team/mark.jpg",
   },
   {
     name: "Tony Siu",
-    role: "EEG Model Research",
+    role: "AI Advisor",
     affiliation: "Temple University",
     photo: "/team/tony.jpeg",
   },
