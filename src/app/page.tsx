@@ -318,10 +318,10 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              The team
+              Team
             </h2>
             <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Researchers and engineers from NTU, Caltech, Temple, and beyond.
+              Researchers and engineers from NTU, NYCU, Temple, and beyond.
             </p>
           </div>
 
