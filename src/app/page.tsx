@@ -319,13 +319,13 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 gap-5">
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4"
+                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow flex items-center gap-5"
               >
-                <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden border-2 border-violet-100">
+                <div className="relative w-24 h-24 shrink-0 rounded-full overflow-hidden border-2 border-violet-100">
                   <Image
                     src={member.photo}
                     alt={member.name}
@@ -334,9 +334,9 @@ export default function LandingPage() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">{member.name}</p>
+                  <p className="font-semibold text-gray-900 text-lg">{member.name}</p>
                   <p className="text-sm text-violet-600 mb-0.5">{member.role}</p>
-                  <p className="text-xs text-gray-400">{member.affiliation}</p>
+                  <p className="text-sm text-gray-400">{member.affiliation}</p>
                 </div>
               </div>
             ))}
