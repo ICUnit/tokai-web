@@ -365,7 +365,7 @@ export default function LandingPage() {
             Join the pre-alpha. Be among the first to experience neurosupport
             that actually works with your biology.
           </p>
-          <Link href="/signup">
+          <a href="https://tokai-pre-alpha-tokai.vercel.app/" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-gradient-to-r from-violet-500 to-pink-500 text-white border-0 hover:opacity-90 transition-opacity text-base px-10"
@@ -373,7 +373,7 @@ export default function LandingPage() {
               Sign up for early access
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
-          </Link>
+          </a>
           <p className="text-sm text-gray-400 mt-4">
             Free during pre-alpha · No credit card required
           </p>
