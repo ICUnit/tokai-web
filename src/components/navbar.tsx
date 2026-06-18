@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { LanguageToggle } from "@/components/language-toggle";
 
 export function Navbar() {
   return (
@@ -20,6 +21,7 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center gap-3">
+          <LanguageToggle />
           <Link href="/login">
             <Button variant="ghost" size="lg" className="text-[#c8d8e8] hover:text-[#e8f4ff] hover:bg-purple-400/10 text-base">
               Sign in

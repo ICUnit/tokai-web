@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Activity, Bot, Brain, CheckCircle, ChevronRight, Cpu, Zap } from "lucide-react";
+import { Activity, Bot, Brain, CheckCircle, ChevronRight, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -8,42 +8,42 @@ import { Footer } from "@/components/footer";
 const features = [
   {
     icon: Activity,
-    title: "Live Focus Index",
+    title: "Nine-Metric Neural Dashboard",
     description:
-      "Tokai reads your EEG in real time and computes a continuous Focus Index — no more guessing when you're in the zone or when you've hit a wall.",
+      "Track Focus Index, Bio Energy, Mental Fatigue, Working Memory Load, Theta/Beta Ratio, and four more cognitive signals — live. Works from a 30-second self-report, simulated data, research EEG datasets, or a real BCI headset.",
   },
   {
     icon: Bot,
     title: "Agentic Task Planner",
     description:
-      "An AI agent that proactively reorganizes your to-do list based on your current cognitive state, biological energy, and task difficulty.",
+      "TokAgent (powered by Claude) reads all nine neural metrics alongside your tasks, journal, and medication log — then takes direct action in your workspace: creating tasks, starting timers, logging entries, all from a natural-language command.",
   },
   {
-    icon: Cpu,
-    title: "Multimodal Neurosupport",
+    icon: Shield,
+    title: "Privacy-First Architecture",
     description:
-      "Combines EEG data, biometrics, and software-level productivity signals to build a complete, empirical picture of your ADHD.",
+      "Neural data never leaves your browser. All cognitive metrics are held in session memory only — never written to a server. Behavioral data (tasks, notes, medications) is isolated per-user via row-level security at the database level.",
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Connect your BCI headset",
+    title: "Choose your data mode",
     description:
-      "Pair any consumer EEG headset with Tokai. We support multiple hardware configurations including Neurable, Muse, and OpenBCI.",
+      "Start with a 30-second self-report check-in — no hardware required. Switch to simulated mode for demos, dataset replay for research, or plug in an EEG headset for live neural streaming.",
   },
   {
     number: "02",
-    title: "AI reads your brain",
+    title: "Your cognitive state comes alive",
     description:
-      "Our fine-tuned LUNA neural foundation model processes your EEG stream in real time, computing your Focus Index and detecting cognitive state shifts.",
+      "Nine metrics update in real time — Focus Index, Bio Energy, Mental Fatigue, Working Memory Load, and more — giving you an empirical picture of where your brain is right now.",
   },
   {
     number: "03",
-    title: "Your workflow adapts",
+    title: "TokAgent adapts your workflow",
     description:
-      "The Agentic Task Planner surfaces the right task at the right moment, silences distractions, and schedules deep work when your brain is ready.",
+      "The AI planner recommends the right task for your current cognitive state, executes commands directly in your workspace, and keeps a transparent audit trail of every action it takes.",
   },
 ];
 
@@ -51,43 +51,52 @@ const appFeatures = [
   {
     title: "Neural Dashboard",
     description:
-      "Five live cognitive metrics — Focus Index, Bio Energy, Neural Noise, T/B Ratio, and Focus Window — updated every second. Includes Focus Stream, an interactive real-time chart for tracking your focus patterns over time.",
-    image: "/screenshots/neural_dashboard.png",
-    width: 1658,
-    height: 456,
+      "Nine live cognitive metrics — Focus Index, Sleep Quality, Bio Energy, Mental Fatigue, Working Memory Load, Neural Noise, T/B Ratio, Focus Window, and Hyperfocus Risk — each with a data-source badge showing whether the value comes from self-report, simulation, dataset replay, or live EEG. BCI-only metrics are visually dimmed in self-report mode so you always know what&apos;s driving each value.",
+    image: "/screenshots/dashboard.png",
+    width: 1388,
+    height: 396,
     wide: true,
   },
   {
     title: "TokAgent",
     description:
-      "An AI assistant powered by Claude that analyzes your live brain data alongside your tasks and journal entries to provide personalized planning recommendations.",
+      "A Claude-powered AI assistant that reads your full cognitive context — all nine neural metrics, your task list, journal, and medication log — and can take direct action in your workspace via ten tool-calling actions. Uses Claude Sonnet 4.6 for planning and tool use, Haiku 4.5 for fast inline recommendations. Bring your own Anthropic API key; it never touches Tokai&apos;s servers.",
     image: "/screenshots/tokagent.png",
-    width: 773,
-    height: 721,
+    width: 1190,
+    height: 640,
   },
   {
-    title: "TokToDo",
+    title: "TokDo",
     description:
-      "A task manager with cognitive demand classification (Low / Medium / High), time estimates, and deadline tracking — so your workload always matches your neural capacity.",
-    image: "/screenshots/toktodo.png",
-    width: 993,
-    height: 900,
+      "A focus-aware task manager where each task carries a cognitive demand score (0–100) matched against your live Focus Index. Set time estimates, deadlines, and emoji tags — TokAgent uses all of this to surface the right task at the right moment.",
+    image: "/screenshots/tokdo.png",
+    width: 350,
+    height: 895,
   },
   {
     title: "TokNote",
     description:
-      "A journal with mood tagging and neural insights integration. Capture how you feel and let Tokai surface patterns across your cognitive states.",
+      "An ADHD-friendly journal with mood tagging and focus logging. Capture how you feel throughout the day and let TokInsights surface correlations between your journal entries and cognitive patterns over time.",
     image: "/screenshots/toknote.png",
-    width: 789,
-    height: 724,
+    width: 616,
+    height: 482,
   },
   {
     title: "TokMed",
     description:
-      "Medication and supplement tracking with timing reminders, so you never miss a dose and can correlate medication effects with your Focus Index.",
+      "Medication and supplement tracking with timestamp-anchored markers on your focus charts, so you can see exactly how each dose correlates with your cognitive state throughout the day.",
     image: "/screenshots/tokmed.png",
-    width: 523,
-    height: 376,
+    width: 610,
+    height: 482,
+  },
+  {
+    title: "TokInsights",
+    description:
+      "Automatic, device-local analysis of your productivity patterns — when you focus best, mood correlations with task completion, and weekly cognitive trends. All analysis runs in your browser; no data is sent to external servers.",
+    image: "/screenshots/tokinsights.png",
+    width: 610,
+    height: 482,
+    wide: true,
   },
 ];
 
@@ -170,7 +179,7 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/signup">
+            <a href="https://go.tokai.app" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-400 to-violet-600 text-white border-0 hover:opacity-90 transition-opacity w-full sm:w-auto text-base px-8"
@@ -178,7 +187,7 @@ export default function LandingPage() {
                 Get started free
                 <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
-            </Link>
+            </a>
             <Link href="#how-it-works">
               <Button
                 size="lg"
@@ -193,7 +202,7 @@ export default function LandingPage() {
           <div className="mt-12 flex flex-wrap justify-center gap-6 text-base text-[#c8d8e8]">
             {[
               "NTU Master's research project",
-              "Fine-tuned LUNA EEG foundation model",
+              "Open source · Apache 2.0",
               "Neuroethics & privacy-first",
             ].map((point) => (
               <span key={point} className="flex items-center gap-1.5">
@@ -201,6 +210,20 @@ export default function LandingPage() {
                 {point}
               </span>
             ))}
+          </div>
+        </div>
+
+        {/* Hero app preview */}
+        <div className="relative max-w-5xl mx-auto mt-16">
+          <div className="rounded-2xl overflow-hidden border border-purple-400/20 shadow-2xl shadow-purple-900/40">
+            <Image
+              src="/screenshots/dashboard.png"
+              alt="Tokai Neural Dashboard"
+              width={1388}
+              height={396}
+              className="w-full object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -246,7 +269,7 @@ export default function LandingPage() {
               How Tokai works
             </h2>
             <p className="text-lg text-[#c8d8e8] max-w-2xl mx-auto">
-              Three steps from raw brainwaves to a smarter workday.
+              Three steps from cognitive state awareness to a smarter workday.
             </p>
           </div>
 
@@ -284,16 +307,16 @@ export default function LandingPage() {
                 </span>
               </h2>
               <p className="text-[#c8d8e8] leading-relaxed mb-6 text-base">
-                Powered by a fine-tuned LUNA neural foundation model trained on
-                21,000+ hours of EEG data, Tokai delivers a continuous,
-                empirical Focus Index — not a self-report score, but a real
-                neural signal.
+                Tokai computes a continuous Focus Index from your chosen data
+                source — self-report, simulated, EEG dataset replay, or live
+                BCI — giving you an empirical cognitive baseline without
+                requiring any hardware to get started.
               </p>
               <ul className="flex flex-col gap-3">
                 {[
                   "Detect deep focus vs. cognitive fatigue in real time",
-                  "Predict optimal focus windows before they happen",
                   "Track Alpha/Beta wave ratios and neural noise",
+                  "See hyperfocus risk and estimated focus window duration",
                 ].map((point) => (
                   <li
                     key={point}
@@ -327,7 +350,7 @@ export default function LandingPage() {
                 Optimal focus window · 38 min remaining
               </p>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-3 mb-3">
                 {[
                   { label: "Bio Energy", value: "72%" },
                   { label: "Neural Noise", value: "Low" },
@@ -344,10 +367,27 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { label: "Mental Fatigue", value: "31" },
+                  { label: "WM Load", value: "42" },
+                  { label: "Hyperfocus", value: "12%" },
+                ].map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="bg-[#0c0818] rounded-xl p-3 text-center"
+                  >
+                    <p className="text-sm text-[#5a8fa8] mb-1">{metric.label}</p>
+                    <p className="font-semibold text-[#e8f4ff] text-base">
+                      {metric.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <div className="mt-4 bg-purple-400/10 border border-purple-400/20 rounded-xl p-3">
                 <p className="text-sm text-purple-300 font-semibold mb-0.5">
-                  LUNA AI Insight
+                  TokAgent
                 </p>
                 <p className="text-sm text-[#c8d8e8]">
                   High focus detected. Recommend starting your most cognitively
@@ -367,7 +407,7 @@ export default function LandingPage() {
               Inside Tokai v0.2.0
             </h2>
             <p className="text-lg text-[#c8d8e8] max-w-2xl mx-auto">
-              Five integrated tools, all driven by your neural data.
+              Six integrated tools, all driven by your neural data.
             </p>
           </div>
 
@@ -390,9 +430,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* 2×2 grid for remaining features */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {appFeatures.slice(1).map((feature) => (
+          {/* TokAgent + TokDo */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {appFeatures.slice(1, 3).map((feature) => (
               <div
                 key={feature.title}
                 className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20 flex flex-col gap-4"
@@ -410,12 +450,64 @@ export default function LandingPage() {
                     src={feature.image}
                     alt={feature.title}
                     width={feature.width}
-                    height={feature.height!}
+                    height={feature.height}
                     className="w-full object-cover"
                   />
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* TokNote + TokMed */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {appFeatures.slice(3, 5).map((feature) => (
+              <div
+                key={feature.title}
+                className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20 flex flex-col gap-4"
+              >
+                <div>
+                  <h3 className="font-semibold text-[#e8f4ff] text-lg mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#c8d8e8] text-base leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+                <div className="rounded-xl overflow-hidden border border-purple-400/10 mt-auto">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={feature.width}
+                    height={feature.height}
+                    className="w-full object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* TokInsights — full width, new feature */}
+          <div className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20">
+            <div className="flex items-center gap-3 mb-1">
+              <h3 className="font-semibold text-[#e8f4ff] text-xl">
+                {appFeatures[5].title}
+              </h3>
+              <span className="text-xs bg-purple-400/20 text-purple-300 border border-purple-400/30 rounded-full px-2.5 py-0.5 font-medium">
+                New in Alpha
+              </span>
+            </div>
+            <p className="text-[#c8d8e8] text-base mb-5">
+              {appFeatures[5].description}
+            </p>
+            <div className="rounded-xl overflow-hidden border border-purple-400/10">
+              <Image
+                src={appFeatures[5].image}
+                alt={appFeatures[5].title}
+                width={appFeatures[5].width}
+                height={appFeatures[5].height}
+                className="w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
