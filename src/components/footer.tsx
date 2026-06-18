@@ -84,7 +84,7 @@ export function Footer() {
             © {new Date().getFullYear()} Tokai. All rights reserved.
           </p>
           <p className="text-sm text-[#5a8fa8]">
-            Pre-Alpha · Not for clinical use
+            Alpha · Not for clinical use
           </p>
         </div>
       </div>

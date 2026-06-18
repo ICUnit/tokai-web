@@ -151,7 +151,7 @@ export default function LandingPage() {
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-purple-400/10 border border-purple-400/20 rounded-full px-4 py-1.5 text-base text-purple-300 mb-8 font-medium">
             <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-            Now in Pre-Alpha v0.1.0
+            Now in Alpha v0.2.0
           </div>
 
           <p className="text-xl sm:text-2xl font-medium text-[#5a8fa8] mb-2">
@@ -364,7 +364,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#e8f4ff] mb-4">
-              Inside Tokai v0.1.0
+              Inside Tokai v0.2.0
             </h2>
             <p className="text-lg text-[#c8d8e8] max-w-2xl mx-auto">
               Five integrated tools, all driven by your neural data.
@@ -468,10 +468,10 @@ export default function LandingPage() {
             Ready to understand your brain?
           </h2>
           <p className="text-[#c8d8e8] text-lg mb-8 max-w-xl mx-auto">
-            Join the pre-alpha. Be among the first to experience neurosupport
+            Join the alpha. Be among the first to experience neurosupport
             that actually works with your biology.
           </p>
-          <a href="https://tokai-pre-alpha-tokai.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <a href="https://go.tokai.app" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-400 to-violet-600 text-white border-0 hover:opacity-90 transition-opacity text-base px-10"
@@ -481,7 +481,7 @@ export default function LandingPage() {
             </Button>
           </a>
           <p className="text-sm text-[#5a8fa8] mt-4">
-            Free during pre-alpha · No credit card required
+            Free during alpha · No credit card required
           </p>
         </div>
       </section>
