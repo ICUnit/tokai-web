@@ -22,19 +22,19 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <LanguageToggle />
-          <Link href="/login">
+          <a href="https://go.tokai.app" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="lg" className="text-[#c8d8e8] hover:text-[#e8f4ff] hover:bg-purple-400/10 text-base">
               Sign in
             </Button>
-          </Link>
-          <Link href="/signup">
+          </a>
+          <a href="https://go.tokai.app" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-400 to-violet-600 text-white border-0 hover:opacity-90 transition-opacity shadow-sm text-base px-6"
             >
               Get started
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

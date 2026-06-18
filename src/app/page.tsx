@@ -4,6 +4,7 @@ import { Activity, Bot, Brain, CheckCircle, ChevronRight, Shield, Zap } from "lu
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { AppFeatureCarousel } from "@/components/app-feature-carousel";
 
 const features = [
   {
@@ -44,59 +45,6 @@ const steps = [
     title: "TokAgent adapts your workflow",
     description:
       "The AI planner recommends the right task for your current cognitive state, executes commands directly in your workspace, and keeps a transparent audit trail of every action it takes.",
-  },
-];
-
-const appFeatures = [
-  {
-    title: "Neural Dashboard",
-    description:
-      "Nine live cognitive metrics — Focus Index, Sleep Quality, Bio Energy, Mental Fatigue, Working Memory Load, Neural Noise, T/B Ratio, Focus Window, and Hyperfocus Risk — each with a data-source badge showing whether the value comes from self-report, simulation, dataset replay, or live EEG. BCI-only metrics are visually dimmed in self-report mode so you always know what&apos;s driving each value.",
-    image: "/screenshots/dashboard.png",
-    width: 1388,
-    height: 396,
-    wide: true,
-  },
-  {
-    title: "TokAgent",
-    description:
-      "A Claude-powered AI assistant that reads your full cognitive context — all nine neural metrics, your task list, journal, and medication log — and can take direct action in your workspace via ten tool-calling actions. Uses Claude Sonnet 4.6 for planning and tool use, Haiku 4.5 for fast inline recommendations. Bring your own Anthropic API key; it never touches Tokai&apos;s servers.",
-    image: "/screenshots/tokagent.png",
-    width: 1190,
-    height: 640,
-  },
-  {
-    title: "TokDo",
-    description:
-      "A focus-aware task manager where each task carries a cognitive demand score (0–100) matched against your live Focus Index. Set time estimates, deadlines, and emoji tags — TokAgent uses all of this to surface the right task at the right moment.",
-    image: "/screenshots/tokdo.png",
-    width: 350,
-    height: 895,
-  },
-  {
-    title: "TokNote",
-    description:
-      "An ADHD-friendly journal with mood tagging and focus logging. Capture how you feel throughout the day and let TokInsights surface correlations between your journal entries and cognitive patterns over time.",
-    image: "/screenshots/toknote.png",
-    width: 616,
-    height: 482,
-  },
-  {
-    title: "TokMed",
-    description:
-      "Medication and supplement tracking with timestamp-anchored markers on your focus charts, so you can see exactly how each dose correlates with your cognitive state throughout the day.",
-    image: "/screenshots/tokmed.png",
-    width: 610,
-    height: 482,
-  },
-  {
-    title: "TokInsights",
-    description:
-      "Automatic, device-local analysis of your productivity patterns — when you focus best, mood correlations with task completion, and weekly cognitive trends. All analysis runs in your browser; no data is sent to external servers.",
-    image: "/screenshots/tokinsights.png",
-    width: 610,
-    height: 482,
-    wide: true,
   },
 ];
 
@@ -410,105 +358,7 @@ export default function LandingPage() {
               Six integrated tools, all driven by your neural data.
             </p>
           </div>
-
-          {/* Neural Dashboard — full width */}
-          <div className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 mb-6 shadow-lg shadow-purple-900/20">
-            <h3 className="font-semibold text-[#e8f4ff] text-xl mb-1">
-              {appFeatures[0].title}
-            </h3>
-            <p className="text-[#c8d8e8] text-base mb-5">
-              {appFeatures[0].description}
-            </p>
-            <div className="rounded-xl overflow-hidden border border-purple-400/10">
-              <Image
-                src={appFeatures[0].image}
-                alt={appFeatures[0].title}
-                width={appFeatures[0].width}
-                height={appFeatures[0].height}
-                className="w-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* TokAgent + TokDo */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {appFeatures.slice(1, 3).map((feature) => (
-              <div
-                key={feature.title}
-                className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20 flex flex-col gap-4"
-              >
-                <div>
-                  <h3 className="font-semibold text-[#e8f4ff] text-lg mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[#c8d8e8] text-base leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-                <div className="rounded-xl overflow-hidden border border-purple-400/10 mt-auto">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    width={feature.width}
-                    height={feature.height}
-                    className="w-full object-cover"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* TokNote + TokMed */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {appFeatures.slice(3, 5).map((feature) => (
-              <div
-                key={feature.title}
-                className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20 flex flex-col gap-4"
-              >
-                <div>
-                  <h3 className="font-semibold text-[#e8f4ff] text-lg mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-[#c8d8e8] text-base leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-                <div className="rounded-xl overflow-hidden border border-purple-400/10 mt-auto">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    width={feature.width}
-                    height={feature.height}
-                    className="w-full object-cover"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* TokInsights — full width, new feature */}
-          <div className="bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20">
-            <div className="flex items-center gap-3 mb-1">
-              <h3 className="font-semibold text-[#e8f4ff] text-xl">
-                {appFeatures[5].title}
-              </h3>
-              <span className="text-xs bg-purple-400/20 text-purple-300 border border-purple-400/30 rounded-full px-2.5 py-0.5 font-medium">
-                New in Alpha
-              </span>
-            </div>
-            <p className="text-[#c8d8e8] text-base mb-5">
-              {appFeatures[5].description}
-            </p>
-            <div className="rounded-xl overflow-hidden border border-purple-400/10">
-              <Image
-                src={appFeatures[5].image}
-                alt={appFeatures[5].title}
-                width={appFeatures[5].width}
-                height={appFeatures[5].height}
-                className="w-full object-cover"
-              />
-            </div>
-          </div>
+          <AppFeatureCarousel />
         </div>
       </section>
 
