@@ -8,8 +8,10 @@ import { t } from "@/lib/translations";
 
 const featureIcons = [Activity, Bot, Shield];
 
-// Add contributor names here as early adopters complete the questionnaire
-const contributors: { name: string; affiliation?: string }[] = [];
+const contributors: { name: string; affiliation?: string; photo?: string }[] = [
+  { name: "Bernadette Harding", photo: "/contributors/bernie.jpg" },
+  { name: "Farley Warner",      photo: "/contributors/farley.jpg" },
+];
 
 const team = [
   {
@@ -372,19 +374,25 @@ export function LandingContent() {
               </a>
             </div>
           ) : (
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="flex flex-wrap gap-6 justify-center">
               {contributors.map((c) => (
                 <div
                   key={c.name}
-                  className="bg-[#100a25] border border-purple-400/10 rounded-full px-5 py-2.5 flex items-center gap-3"
+                  className="bg-[#100a25] border border-purple-400/10 rounded-2xl p-5 shadow-sm flex items-center gap-4"
                 >
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
-                    {c.name[0]}
+                  <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden border-2 border-purple-400/20">
+                    {c.photo ? (
+                      <Image src={c.photo} alt={c.name} fill className="object-cover" />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white text-lg font-bold">
+                        {c.name[0]}
+                      </div>
+                    )}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#e8f4ff]">{c.name}</p>
+                    <p className="font-semibold text-[#e8f4ff]">{c.name}</p>
                     {c.affiliation && (
-                      <p className="text-xs text-[#5a8fa8]">{c.affiliation}</p>
+                      <p className="text-sm text-[#5a8fa8]">{c.affiliation}</p>
                     )}
                   </div>
                 </div>
