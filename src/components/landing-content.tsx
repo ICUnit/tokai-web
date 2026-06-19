@@ -374,25 +374,25 @@ export function LandingContent() {
               </a>
             </div>
           ) : (
-            <div className="flex flex-wrap gap-6 justify-center">
+            <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
               {contributors.map((c) => (
                 <div
                   key={c.name}
-                  className="bg-[#100a25] border border-purple-400/10 rounded-2xl p-5 shadow-sm flex items-center gap-4"
+                  className="bg-[#120d28] border border-purple-400/10 rounded-2xl p-6 shadow-sm flex items-center gap-5"
                 >
-                  <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden border-2 border-purple-400/20">
+                  <div className="relative w-24 h-24 shrink-0 rounded-full overflow-hidden border-2 border-purple-400/20">
                     {c.photo ? (
                       <Image src={c.photo} alt={c.name} fill className="object-cover" />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white text-lg font-bold">
+                      <div className="w-full h-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white text-xl font-bold">
                         {c.name[0]}
                       </div>
                     )}
                   </div>
                   <div>
-                    <p className="font-semibold text-[#e8f4ff]">{c.name}</p>
+                    <p className="font-semibold text-[#e8f4ff] text-lg">{c.name}</p>
                     {c.affiliation && (
-                      <p className="text-sm text-[#5a8fa8]">{c.affiliation}</p>
+                      <p className="text-base text-[#5a8fa8]">{c.affiliation}</p>
                     )}
                   </div>
                 </div>
