@@ -81,7 +81,15 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-purple-400/10 flex flex-col sm:flex-row justify-between gap-2">
           <p className="text-sm text-[#5a8fa8]">
-            © {new Date().getFullYear()} Tokai. All rights reserved.
+            © {new Date().getFullYear()} Seth Austin Harding · Open source under{" "}
+            <a
+              href="https://github.com/TokaiApp/Tokai/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-purple-400 transition-colors"
+            >
+              Apache 2.0
+            </a>
           </p>
           <p className="text-sm text-[#5a8fa8]">
             Alpha · Not for clinical use

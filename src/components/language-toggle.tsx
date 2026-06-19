@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useLang } from "@/contexts/lang";
 
 export function LanguageToggle() {
-  const [lang, setLang] = useState<"EN" | "ZH">("EN");
+  const { lang, setLang } = useLang();
   return (
     <div className="flex items-center rounded-full border border-purple-400/20 overflow-hidden text-sm font-medium">
       <button

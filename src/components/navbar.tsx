@@ -15,13 +15,13 @@ export function Navbar() {
             height={40}
             className="rounded-xl"
           />
-          <span className="font-bold text-2xl tracking-tight text-[#e8f4ff]">
-            Tokai
+          <span className="font-bold text-2xl tracking-tight">
+            <span className="text-[#7B5EA7]">TOK</span>
+            <span className="text-purple-400">AI</span>
           </span>
         </Link>
 
         <div className="flex items-center gap-3">
-          <LanguageToggle />
           <a href="https://go.tokai.app" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="lg" className="text-[#c8d8e8] hover:text-[#e8f4ff] hover:bg-purple-400/10 text-base">
               Sign in
@@ -35,6 +35,7 @@ export function Navbar() {
               Get started
             </Button>
           </a>
+          <LanguageToggle />
         </div>
       </div>
     </nav>
