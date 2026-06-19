@@ -92,7 +92,7 @@ export const t = {
       subtext: "Six integrated tools, all driven by your neural data.",
     },
     team: {
-      heading: "Team",
+      heading: "Core Team",
       subtext: "Researchers and engineers from NTU, NYCU, Temple, and beyond.",
     },
     cta: {
@@ -226,7 +226,7 @@ export const t = {
       subtext: "六項整合工具，全由您的神經資料驅動。",
     },
     team: {
-      heading: "團隊",
+      heading: "核心團隊",
       subtext: "來自 NTU、NYCU、Temple 等大學的研究人員與工程師。",
     },
     cta: {

@@ -15,7 +15,7 @@ export function Navbar() {
             height={40}
             className="rounded-xl"
           />
-          <span className="font-bold text-2xl tracking-tight">
+          <span className="text-2xl tracking-tight font-semibold" style={{ fontFamily: "var(--font-space-grotesk)" }}>
             <span className="text-[#7B5EA7]">TOK</span>
             <span className="text-purple-400">AI</span>
           </span>

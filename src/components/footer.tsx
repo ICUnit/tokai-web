@@ -24,7 +24,15 @@ export function Footer() {
               neurosupport for ADHD and neurodivergent minds.
             </p>
             <p className="text-sm text-[#5a8fa8]">
-              Research project · National Taiwan University CSIE
+              Research project ·{" "}
+              <a
+                href="https://www.csie.ntu.edu.tw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-400 transition-colors"
+              >
+                National Taiwan University CSIE
+              </a>
             </p>
             <a
               href="mailto:austin@tokai.app"

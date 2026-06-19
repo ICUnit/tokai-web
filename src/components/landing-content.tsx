@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
-import { Activity, Bot, Brain, CheckCircle, ChevronRight, Shield, Zap } from "lucide-react";
+import { Activity, Bot, Brain, CheckCircle, ChevronRight, Shield, Star, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AppFeatureCarousel } from "@/components/app-feature-carousel";
 import { useLang } from "@/contexts/lang";
 import { t } from "@/lib/translations";
 
 const featureIcons = [Activity, Bot, Shield];
+
+// Add contributor names here as early adopters complete the questionnaire
+const contributors: { name: string; affiliation?: string }[] = [];
 
 const team = [
   {
@@ -133,18 +136,27 @@ export function LandingContent() {
                 {point}
               </span>
             ))}
+            <a
+              href="https://github.com/TokaiApp/Tokai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-[#e8f4ff] transition-colors group"
+            >
+              <Star className="w-4 h-4 text-yellow-400 group-hover:fill-yellow-400 transition-all" />
+              {lang === "EN" ? "Star us on GitHub" : "在 GitHub 給我們星星"}
+            </a>
           </div>
         </div>
 
         {/* Hero banner */}
-        <div className="relative max-w-5xl mx-auto mt-16">
-          <div className="rounded-2xl overflow-hidden border border-purple-400/20 shadow-2xl shadow-purple-900/40">
+        <div className="relative max-w-5xl mx-auto mt-12">
+          <div className="rounded-2xl overflow-hidden border border-purple-400/20 shadow-2xl shadow-purple-900/40 h-[360px]">
             <Image
               src="/tokbanner.png"
               alt="Tokai app preview"
               width={1402}
               height={1122}
-              className="w-full object-cover"
+              className="w-full h-full object-cover object-top"
               priority
             />
           </div>
@@ -290,7 +302,7 @@ export function LandingContent() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Core Team */}
       <section id="team" className="py-24 px-6 bg-[#100a25]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -326,6 +338,59 @@ export function LandingContent() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Contributors */}
+      <section id="contributors" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#e8f4ff] mb-4">
+              {lang === "EN" ? "Contributors" : "貢獻者"}
+            </h2>
+            <p className="text-lg text-[#c8d8e8] max-w-xl mx-auto">
+              {lang === "EN"
+                ? "Early adopters who helped shape Tokai by completing our research questionnaire."
+                : "透過填寫研究問卷協助塑造 Tokai 的早期使用者。"}
+            </p>
+          </div>
+
+          {contributors.length === 0 ? (
+            <div className="bg-[#100a25] border border-purple-400/10 rounded-2xl p-12 text-center">
+              <p className="text-[#c8d8e8] text-base mb-6">
+                {lang === "EN"
+                  ? "Contributor listings will appear here as early adopters complete our questionnaire."
+                  : "早期使用者完成問卷後，貢獻者名單將顯示於此。"}
+              </p>
+              <a
+                href="https://go.tokai.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-purple-400/10 border border-purple-400/20 hover:bg-purple-400/20 transition-colors rounded-full px-5 py-2 text-sm text-purple-300 font-medium"
+              >
+                {lang === "EN" ? "Try Tokai & fill the questionnaire" : "試用 Tokai 並填寫問卷"}
+              </a>
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-3 justify-center">
+              {contributors.map((c) => (
+                <div
+                  key={c.name}
+                  className="bg-[#100a25] border border-purple-400/10 rounded-full px-5 py-2.5 flex items-center gap-3"
+                >
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                    {c.name[0]}
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-[#e8f4ff]">{c.name}</p>
+                    {c.affiliation && (
+                      <p className="text-xs text-[#5a8fa8]">{c.affiliation}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

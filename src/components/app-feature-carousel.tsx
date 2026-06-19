@@ -22,31 +22,55 @@ export function AppFeatureCarousel() {
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir === "left" ? -556 : 556, behavior: "smooth" });
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const cardWidth = card ? card.offsetWidth + 24 : 600;
+    el.scrollBy({ left: dir === "left" ? -cardWidth : cardWidth, behavior: "smooth" });
   };
 
   return (
-    <div className="flex items-start gap-3">
+    <div className="relative overflow-hidden">
+      {/* Left edge fade */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0c0818] via-[#0c0818]/60 to-transparent pointer-events-none" />
+      {/* Right edge fade — wider to show there's more */}
+      <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#0c0818] via-[#0c0818]/60 to-transparent pointer-events-none" />
+
+      {/* Left arrow */}
       <button
         onClick={() => scroll("left")}
-        className="shrink-0 mt-[160px] w-10 h-10 rounded-full bg-[#120d28] border border-purple-400/20 flex items-center justify-center text-[#c8d8e8] hover:text-[#e8f4ff] hover:border-purple-400/50 transition-all shadow-md"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#120d28] border border-purple-400/25 flex items-center justify-center text-[#c8d8e8] hover:text-[#e8f4ff] hover:border-purple-400/60 transition-all shadow-lg"
         aria-label="Previous"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
+      {/* Right arrow */}
+      <button
+        onClick={() => scroll("right")}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#120d28] border border-purple-400/25 flex items-center justify-center text-[#c8d8e8] hover:text-[#e8f4ff] hover:border-purple-400/60 transition-all shadow-lg"
+        aria-label="Next"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
 
+      {/* Scroll container */}
       <div
         ref={scrollRef}
-        className="flex gap-5 overflow-x-auto flex-1 pb-2"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="flex gap-6 overflow-x-auto"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          scrollSnapType: "x mandatory",
+        }}
       >
         {features.map((feature, i) => (
           <div
             key={feature.title}
-            className="shrink-0 w-[520px] bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20 flex flex-col gap-4"
+            data-card=""
+            style={{ scrollSnapAlign: "center" }}
+            className="shrink-0 w-[calc(100%-80px)] bg-[#100a25] border border-purple-400/15 rounded-2xl p-6 shadow-lg shadow-purple-900/20 flex flex-col gap-5"
           >
+            {/* Title + description */}
             <div>
-              <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex items-center gap-2 mb-2">
                 <h3 className="font-semibold text-[#e8f4ff] text-xl">{feature.title}</h3>
                 {"isNew" in feature && feature.isNew && (
                   <span className="text-xs bg-purple-400/20 text-purple-300 border border-purple-400/30 rounded-full px-2 py-0.5 font-medium shrink-0">
@@ -54,31 +78,31 @@ export function AppFeatureCarousel() {
                   </span>
                 )}
               </div>
-              <p className="text-[#c8d8e8] text-sm leading-relaxed">{feature.description}</p>
+              <p className="text-[#c8d8e8] text-base leading-relaxed max-w-3xl">
+                {feature.description}
+              </p>
             </div>
+
+            {/* Screenshot */}
             <div
-              className="rounded-xl overflow-hidden border border-purple-400/10 bg-[#0c0818] flex items-center justify-center mt-auto"
-              style={{ height: "300px" }}
+              className="rounded-xl overflow-hidden border border-purple-400/10 bg-[#0c0818] flex items-center justify-center"
+              style={{ height: i === 2 ? "480px" : "420px" }}
             >
               <Image
                 src={images[i].src}
                 alt={feature.title}
                 width={images[i].width}
                 height={images[i].height}
-                className="max-h-[300px] max-w-full object-contain"
+                className={
+                  i === 2
+                    ? "h-[480px] w-auto object-contain"
+                    : "max-h-[420px] max-w-full object-contain"
+                }
               />
             </div>
           </div>
         ))}
       </div>
-
-      <button
-        onClick={() => scroll("right")}
-        className="shrink-0 mt-[160px] w-10 h-10 rounded-full bg-[#120d28] border border-purple-400/20 flex items-center justify-center text-[#c8d8e8] hover:text-[#e8f4ff] hover:border-purple-400/50 transition-all shadow-md"
-        aria-label="Next"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </button>
     </div>
   );
 }
