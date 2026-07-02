@@ -361,8 +361,8 @@ export function LandingContent() {
             </h2>
             <p className="text-lg text-[#c8d8e8] max-w-xl mx-auto">
               {lang === "EN"
-                ? "Early adopters who helped shape Tokai by completing our research questionnaire."
-                : "透過填寫研究問卷協助塑造 Tokai 的早期使用者。"}
+                ? "Early adopters who helped shape Tokai."
+                : "協助塑造 Tokai 的早期使用者。"}
             </p>
           </div>
 
@@ -370,8 +370,8 @@ export function LandingContent() {
             <div className="bg-[#100a25] border border-purple-400/10 rounded-2xl p-12 text-center">
               <p className="text-[#c8d8e8] text-base mb-6">
                 {lang === "EN"
-                  ? "Contributor listings will appear here as early adopters complete our questionnaire."
-                  : "早期使用者完成問卷後，貢獻者名單將顯示於此。"}
+                  ? "Contributor listings will appear here as early adopters join."
+                  : "早期使用者加入後，貢獻者名單將顯示於此。"}
               </p>
               <a
                 href="https://go.tokai.app"
@@ -379,7 +379,7 @@ export function LandingContent() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-purple-400/10 border border-purple-400/20 hover:bg-purple-400/20 transition-colors rounded-full px-5 py-2 text-sm text-purple-300 font-medium"
               >
-                {lang === "EN" ? "Try Tokai & fill the questionnaire" : "試用 Tokai 並填寫問卷"}
+                {lang === "EN" ? "Try Tokai" : "試用 Tokai"}
               </a>
             </div>
           ) : (
