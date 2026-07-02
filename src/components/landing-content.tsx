@@ -9,8 +9,16 @@ import { t } from "@/lib/translations";
 const featureIcons = [Activity, Bot, Shield];
 
 const contributors: { name: string; affiliation?: string; photo?: string }[] = [
-  { name: "Bernadette Harding", photo: "/contributors/bernie.jpg" },
-  { name: "Farley Warner",      photo: "/contributors/farley.jpg" },
+  { name: "Bernadette Harding",  photo: "/contributors/bernie.jpg" },
+  { name: "Farley Warner",       photo: "/contributors/farley.jpg" },
+  { name: "Robert Harding" },
+  { name: "Stella Liu",          photo: "/contributors/stella.jpg" },
+  { name: "Alexander André",     photo: "/contributors/alex.jpg" },
+  { name: "Ting-Wan Wu",         photo: "/contributors/rolan.jpg" },
+  { name: "Mickey Osborne",      photo: "/contributors/mickey.jpg" },
+  { name: "Winson Widyanata" },
+  { name: "Lauren Dravis",       photo: "/contributors/lauren.jpg" },
+  { name: "Alexander Frankish",  photo: "/contributors/alexander.jpg" },
 ];
 
 const team = [
