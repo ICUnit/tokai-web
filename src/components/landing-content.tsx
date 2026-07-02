@@ -19,6 +19,7 @@ const contributors: { name: string; affiliation?: string; photo?: string }[] = [
   { name: "Winson Widyanata" },
   { name: "Lauren Dravis",       photo: "/contributors/lauren.jpg" },
   { name: "Alexander Frankish",  photo: "/contributors/alexander.jpg" },
+  { name: "Samuel Yang",         photo: "/contributors/samuel.jpg" },
 ];
 
 const team = [
